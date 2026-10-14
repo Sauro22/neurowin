@@ -308,6 +308,25 @@ console.log("→ A registar rotas de Desporto...");
 setupSportsRoutes(app);
 
 /* ==========================================
+   FRONTEND PRODUÇÃO
+========================================== */
+
+app.use(express.static("dist"));
+
+app.get("/{*splat}", (req, res, next) => {
+  if (req.path.startsWith("/api/")) {
+    return next();
+  }
+
+  res.sendFile(
+    "index.html",
+    {
+      root: "dist",
+    },
+  );
+});
+
+/* ==========================================
    08. 404 API
 ========================================== */
 

@@ -1,4 +1,4 @@
-export const API_URL = (import.meta.env.VITE_API_URL || "http://localhost:3001").replace(/\/$/, "");
+export const API_URL = (import.meta.env.VITE_API_URL || (import.meta.env.DEV ? "http://localhost:3001" : "")).replace(/\/$/, "");
 
 export const AUTH_TOKEN_KEY = "neurowin-auth-token";
 export const AUTH_USER_KEY = "neurowin-auth-user";
