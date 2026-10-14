@@ -1,0 +1,41 @@
+APP NEUROWIN — ALTERAÇÕES DA VERSÃO COMPLETA V8
+================================================
+
+PROJETO COMPLETO
+- Mantém Home, IA, Perfil, Admin, Login/Registo, Jogo Responsável e navegação.
+- Nome: App NeuroWin.
+- Desporto: EM MANUTENÇÃO.
+
+SINAIS
+- Removida a introdução manual de resultados nos 4 jogos.
+- Adicionado campo/link do jogo e ligação local ao separador por captura autorizada do navegador.
+- Histórico e resultados passam a ser recolhidos automaticamente quando reconhecidos.
+- O motor recalcula automaticamente após novas rondas/spins/runs.
+- "ANALISAR AGORA" fica disponível como recálculo manual, não como alimentação manual dos dados.
+- ACERTO/ERRADO passa a ser calculado automaticamente pela previsão anterior vs resultado real seguinte.
+- Assertividade observada é guardada localmente.
+
+BAC BO
+- Leitura por visão computacional do road/histórico azul, vermelho e empate.
+- Região padrão baseada no layout fornecido; pode ser calibrada por arrasto.
+- Motor Bac Bo atualizado: janelas recentes + contextos 1/2/3 + sequências + alternância + AGUARDAR quando o sinal é demasiado fraco.
+- Janela conhecida: 10 segundos.
+
+FOOTBALL STUDIO
+- Leitura automática do road Casa/Visitante/Empate por cor.
+- Região calibrável.
+- Janela conhecida: 11 segundos.
+
+XXXTREME LIGHTNING ROULETTE
+- Leitura automática do último número por OCR local.
+- Calibração da caixa do resultado mais recente.
+- Janela conhecida: 19 segundos.
+
+CHICKEN ROAD
+- Ligação ao separador e OCR local do multiplicador final.
+- Dificuldade continua a ser selecionada pelo utilizador porque faz parte da configuração da jogada, não do resultado.
+- Sem limite de tempo.
+
+VALIDAÇÃO
+- Os módulos live-signals e a página Signals foram verificados com TypeScript em ES2020 usando declarações de teste para React.
+- A instalação npm completa não foi executada neste ambiente porque o download das dependências excedeu o tempo disponível; no PC do utilizador, executar npm.cmd install.

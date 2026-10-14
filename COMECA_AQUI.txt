@@ -1,0 +1,64 @@
+APP NEUROWIN — VERSÃO COMPLETA V8
+=================================
+
+1) ABRIR NO VS CODE
+-------------------
+Abre a pasta onde este ficheiro está.
+É a pasta correta se também vires:
+- package.json
+- src
+- public
+
+2) INSTALAR
+-----------
+No terminal dessa pasta:
+
+npm.cmd install
+
+3) CORRER
+---------
+
+npm.cmd run dev
+
+Abre o endereço mostrado pelo Vite (normalmente http://localhost:5173).
+
+4) SINAIS AUTOMÁTICOS
+---------------------
+Vai a Sinais e abre um jogo.
+
+Fluxo:
+- cola/usa o link do jogo;
+- carrega em "Abrir jogo";
+- entra normalmente no casino;
+- volta à App NeuroWin e carrega "LIGAR AO JOGO";
+- quando o Chrome pedir, seleciona O SEPARADOR DO JOGO;
+- se a leitura não apanhar a zona correta, usa "Calibrar histórico" ou "Calibrar resultado" uma única vez.
+
+A partir daí os resultados são registados automaticamente. Não existem botões para inserir Jogador/Banca/Empate, números da roleta ou multiplicadores manualmente.
+
+5) BAC BO
+---------
+O Bac Bo tenta ler o quadro de resultados anteriores (azul/vermelho/empate), usa-o para iniciar o histórico e acompanha alterações do quadro. A nova análise é calculada automaticamente após um novo resultado reconhecido.
+
+6) FOOTBALL STUDIO
+------------------
+Lê visualmente o quadro Casa/Visitante/Empate e acompanha novas rondas.
+
+7) XXXTREME LIGHTNING ROULETTE
+------------------------------
+Lê automaticamente a caixa do resultado vencedor. Se necessário, calibra clicando no centro da caixa onde aparece o último número.
+
+8) CHICKEN ROAD
+---------------
+Seleciona apenas a dificuldade (Fácil/Médio/Difícil/Hardcore). A leitura do multiplicador é automática depois de calibrares a zona onde aparece o multiplicador final da run.
+
+9) DESPORTO
+-----------
+A área de apostas desportivas permanece visível como "EM MANUTENÇÃO".
+
+IMPORTANTE
+----------
+- O link identifica/abre o jogo; a leitura real é feita através da partilha do separador autorizada pelo próprio utilizador.
+- Não são usados cookies, tokens ou credenciais do casino.
+- A percentagem mostrada é um índice do modelo, não uma garantia de acerto.
+- ACERTO/ERRADO é calculado automaticamente quando chega o resultado seguinte.

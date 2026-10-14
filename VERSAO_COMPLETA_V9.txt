@@ -1,0 +1,19 @@
+APP NEUROWIN V9 — IA MAIS RÁPIDA
+
+Alterações desta versão:
+- Respostas da NeuroWin AI passam a aparecer em streaming, à medida que o Gemini responde.
+- Novo endpoint: POST /api/chat/stream.
+- Modelo rápido preferencial: gemini-3.5-flash-lite.
+- Fallback automático para o modelo definido em GEMINI_MODEL e depois gemini-3.8-flash.
+- Thinking reduzido (minimal no Flash-Lite; low nos restantes) para diminuir latência.
+- Histórico enviado ao modelo reduzido de 12 para 6 mensagens no frontend.
+- Respostas limitadas a 1000 tokens por pedido para evitar respostas desnecessariamente lentas.
+- /api/chat antigo mantido para compatibilidade.
+
+IMPORTANTE SOBRE O .env:
+Esta pasta não inclui as tuas credenciais. Copia o teu ficheiro .env da V8 para esta V9.
+Não publiques GEMINI_API_KEY nem AUTH_JWT_SECRET.
+
+ARRANQUE:
+Terminal 1: npm.cmd run server
+Terminal 2: npm.cmd run dev

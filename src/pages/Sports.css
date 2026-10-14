@@ -1,0 +1,2343 @@
+/* =========================================================
+   NEUROWIN SPORTS
+   Layout desktop inspirado na referência enviada
+========================================================= */
+
+.sports-page {
+  --nw-bg: #020c16;
+  --nw-panel: #05233a;
+  --nw-panel-2: #062b46;
+  --nw-card: rgba(4, 31, 52, 0.94);
+  --nw-border: rgba(23, 174, 226, 0.48);
+  --nw-border-soft: rgba(32, 155, 205, 0.22);
+  --nw-cyan: #25d9f8;
+  --nw-cyan-strong: #00d7ff;
+  --nw-green: #0bffd1;
+  --nw-white: #f6fbff;
+  --nw-muted: #94abc0;
+
+  position: relative;
+
+  width: 100%;
+  min-height: 100vh;
+
+  overflow-x: hidden;
+
+  color: var(--nw-white);
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(1, 11, 20, 0.76) 0%,
+      rgba(2, 12, 22, 0.92) 42%,
+      #020b14 100%
+    ),
+    url("/assets/neuro-win-sports-bg.png")
+      center top / cover fixed no-repeat;
+}
+
+.sports-page,
+.sports-page * {
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   FUNDO GLOBAL
+========================================================= */
+
+.sports-page-premium::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  z-index: 0;
+
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      circle at 72% 5%,
+      rgba(17, 139, 208, 0.12),
+      transparent 32%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(2, 12, 22, 0.12),
+      rgba(2, 12, 22, 0.78) 65%,
+      #020b14 100%
+    );
+}
+
+.sports-background-glow {
+  display: none;
+}
+
+/* =========================================================
+   LAYOUT
+========================================================= */
+
+.sports-layout {
+  position: relative;
+  z-index: 1;
+
+  width: calc(100% - 48px);
+  max-width: none;
+
+  margin: 0 24px;
+
+  display: grid;
+
+  grid-template-columns:
+    296px
+    minmax(0, 1fr);
+
+  gap: 38px;
+
+  padding:
+    36px 0
+    70px;
+}
+
+/* =========================================================
+   PAINEL ESQUERDO
+========================================================= */
+
+.sports-overview {
+  position: sticky;
+
+  top: 96px;
+
+  align-self: start;
+
+  width: 296px;
+
+  min-height:
+    calc(100vh - 124px);
+
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+
+  padding:
+    22px 16px
+    22px;
+
+  border:
+    1px solid
+    rgba(32, 173, 222, 0.35);
+
+  border-radius: 16px;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(6, 38, 62, 0.98) 0%,
+      rgba(4, 29, 48, 0.98) 58%,
+      rgba(3, 23, 39, 0.99) 100%
+    );
+
+  box-shadow:
+    0 18px 50px
+    rgba(0, 0, 0, 0.25);
+}
+
+.sports-overview-top {
+  position: relative;
+  z-index: 3;
+}
+
+.sports-overview-tag {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-height: 36px;
+
+  padding:
+    0 18px;
+
+  border:
+    1px solid
+    rgba(0, 209, 255, 0.72);
+
+  border-radius: 999px;
+
+  color: #29ddff;
+
+  background:
+    rgba(0, 163, 217, 0.09);
+
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.sports-overview h2 {
+  margin:
+    16px 0 4px;
+
+  color: #ffffff;
+
+  font-size: 27px;
+  line-height: 1.05;
+  font-weight: 850;
+
+  letter-spacing:
+    -0.035em;
+}
+
+.sports-overview-top p {
+  margin: 0;
+
+  color: #9bb1c5;
+
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+/* =========================================================
+   STATS ESQUERDA
+========================================================= */
+
+.sports-overview-stats {
+  position: relative;
+  z-index: 3;
+
+  display: grid;
+
+  gap: 14px;
+
+  margin-top: 22px;
+}
+
+.sports-overview-stat {
+  min-height: 92px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 16px;
+
+  padding:
+    14px 14px;
+
+  border:
+    1px solid
+    rgba(37, 164, 214, 0.26);
+
+  border-radius: 13px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(9, 54, 87, 0.88),
+      rgba(5, 38, 64, 0.9)
+    );
+}
+
+.sports-stat-icon {
+  flex: 0 0 auto;
+
+  width: 51px;
+  height: 51px;
+
+  display: grid;
+
+  place-items: center;
+
+  border:
+    1px solid
+    rgba(29, 190, 242, 0.16);
+
+  border-radius: 11px;
+
+  color: #27dcff;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(17, 104, 153, 0.7),
+      rgba(7, 69, 108, 0.78)
+    );
+}
+
+.sports-stat-icon svg {
+  width: 26px;
+  height: 26px;
+}
+
+.sports-overview-stat > div:last-child {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+.sports-overview-stat span {
+  color: #b7c7d7;
+
+  font-size: 13px;
+}
+
+.sports-overview-stat strong {
+  color: #ffffff;
+
+  font-size: 24px;
+  line-height: 1;
+
+  font-weight: 850;
+}
+
+/* =========================================================
+   BOTÃO ATUALIZAR
+========================================================= */
+
+.sports-refresh-button {
+  position: relative;
+  z-index: 3;
+
+  width: 100%;
+
+  min-height: 58px;
+
+  margin-top: 16px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+
+  border: 0;
+
+  border-radius: 11px;
+
+  cursor: pointer;
+
+  color: #001923;
+
+  background:
+    linear-gradient(
+      135deg,
+      #42def4,
+      #26c5ea
+    );
+
+  box-shadow:
+    0 11px 25px
+    rgba(0, 192, 234, 0.17);
+
+  font-size: 15px;
+  font-weight: 850;
+}
+
+.sports-refresh-button:hover:not(:disabled) {
+  filter: brightness(1.06);
+}
+
+.sports-refresh-button:disabled {
+  opacity: 0.66;
+  cursor: wait;
+}
+
+.sports-refresh-icon {
+  width: 18px;
+  height: 18px;
+
+  display: inline-flex;
+}
+
+.sports-refresh-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* =========================================================
+   ESTÁDIO DO PAINEL ESQUERDO
+========================================================= */
+
+.sports-overview-stadium {
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  z-index: 1;
+
+  height: 310px;
+
+  pointer-events: none;
+
+  opacity: 0.58;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(4, 29, 48, 1) 0%,
+      rgba(4, 29, 48, 0.68) 20%,
+      rgba(3, 20, 35, 0.14) 58%,
+      rgba(3, 20, 35, 0.25) 100%
+    ),
+    url("/assets/neuro-win-sports-bg.png")
+      center bottom / cover no-repeat;
+}
+
+.sports-overview-decoration {
+  position: relative;
+  z-index: 3;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 13px;
+
+  margin-top: auto;
+
+  padding:
+    90px 10px
+    4px;
+}
+
+.sports-brand-symbol {
+  color: #26d9f5;
+
+  font-size: 38px;
+  line-height: 1;
+
+  font-weight: 950;
+  font-style: italic;
+
+  transform:
+    skew(-10deg);
+}
+
+.sports-overview-decoration > div:last-child {
+  display: flex;
+  flex-direction: column;
+}
+
+.sports-overview-decoration strong {
+  color: #9ab1c5;
+
+  font-size: 15px;
+  font-weight: 850;
+}
+
+.sports-overview-decoration span {
+  margin-top: 4px;
+
+  color: #668299;
+
+  font-size: 8px;
+  line-height: 1.5;
+
+  font-weight: 800;
+
+  letter-spacing: 0.22em;
+}
+
+/* =========================================================
+   CONTEÚDO
+========================================================= */
+
+.sports-content {
+  min-width: 0;
+
+  padding-top: 11px;
+}
+
+.sports-desktop-heading {
+  margin:
+    0 0
+    27px;
+}
+
+.sports-desktop-heading h1 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: 32px;
+  line-height: 1.05;
+
+  font-weight: 850;
+
+  letter-spacing:
+    -0.045em;
+}
+
+.sports-desktop-heading p {
+  margin:
+    8px 0 0;
+
+  color: #96adc2;
+
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+/* =========================================================
+   LISTA DE JOGOS
+========================================================= */
+
+.sports-matches {
+  display: grid;
+
+  gap: 16px;
+}
+
+/* =========================================================
+   CARTÃO DO JOGO
+========================================================= */
+
+.sports-match-card {
+  position: relative;
+
+  min-height: 222px;
+
+  overflow: hidden;
+
+  border:
+    1px solid
+    rgba(17, 181, 232, 0.55);
+
+  border-radius: 15px;
+
+  background:
+    linear-gradient(
+      110deg,
+      rgba(4, 34, 57, 0.97) 0%,
+      rgba(4, 31, 52, 0.96) 56%,
+      rgba(3, 29, 48, 0.94) 100%
+    );
+
+  box-shadow:
+    0 14px 36px
+    rgba(0, 0, 0, 0.2);
+
+  transition:
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.sports-match-card:hover {
+  border-color:
+    rgba(30, 210, 255, 0.78);
+
+  transform:
+    translateY(-1px);
+}
+
+.sports-match-card.is-expanded {
+  border-color:
+    rgba(28, 210, 249, 0.82);
+}
+
+/* =========================================================
+   FUNDO DO CARTÃO
+========================================================= */
+
+.sports-match-stadium {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 0;
+
+  pointer-events: none;
+
+  opacity: 0.22;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(4, 31, 52, 0.96) 0%,
+      rgba(4, 31, 52, 0.8) 40%,
+      rgba(4, 31, 52, 0.44) 70%,
+      rgba(4, 31, 52, 0.36) 100%
+    ),
+    url("/assets/neuro-win-sports-bg.png")
+      right center / cover no-repeat;
+}
+
+.sports-match-card::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 1;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0, 178, 236, 0.022),
+      transparent 44%
+    );
+}
+
+/* =========================================================
+   CONTEÚDO PRINCIPAL DO CARTÃO
+
+   IMPORTANTE:
+   os últimos 165px ficam reservados
+   exclusivamente para o símbolo da liga.
+========================================================= */
+
+.sports-match-main {
+  position: relative;
+
+  z-index: 3;
+
+  min-height: 220px;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    300px;
+
+  gap: 28px;
+
+  padding:
+    20px 180px
+    18px 24px;
+}
+
+.sports-match-info {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+}
+
+/* =========================================================
+   META
+========================================================= */
+
+.sports-match-meta {
+  min-height: 27px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 18px;
+
+  color: #9fb5c9;
+
+  font-size: 12px;
+}
+
+.sports-match-meta-left {
+  min-width: 0;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+}
+
+.sports-match-meta-left > span:not(
+  .sports-country-flag
+) {
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+
+  white-space: nowrap;
+}
+
+.sports-match-meta i {
+  color: #5b768e;
+
+  font-style: normal;
+}
+
+.sports-country-flag {
+  font-size: 20px;
+  line-height: 1;
+}
+
+.sports-match-time {
+  flex: 0 0 auto;
+
+  color: #c4d6e5;
+
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* =========================================================
+   EQUIPAS
+========================================================= */
+
+.sports-teams-row {
+  width: min(
+    650px,
+    100%
+  );
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    48px
+    minmax(0, 1fr);
+
+  align-items: center;
+
+  gap: 19px;
+
+  margin:
+    14px 0
+    16px;
+
+  padding:
+    0 18px;
+}
+
+.sports-team {
+  min-width: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 16px;
+}
+
+.sports-team strong {
+  min-width: 0;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+
+  white-space: nowrap;
+
+  color: #ffffff;
+
+  font-size: 17px;
+  font-weight: 850;
+
+  letter-spacing:
+    -0.025em;
+}
+
+.sports-team-logo {
+  position: relative;
+
+  flex: 0 0 auto;
+
+  width: 63px;
+  height: 63px;
+
+  display: grid;
+
+  place-items: center;
+
+  border-radius: 50%;
+
+  color: #82a8bd;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(16, 126, 178, 0.1),
+      transparent 72%
+    );
+}
+
+.sports-team-logo > span {
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.sports-team-logo img {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+
+  filter:
+    drop-shadow(
+      0 4px 8px
+      rgba(0, 0, 0, 0.25)
+    );
+}
+
+.sports-vs {
+  width: 42px;
+  height: 42px;
+
+  display: grid;
+
+  place-items: center;
+
+  margin: auto;
+
+  border:
+    1px solid
+    rgba(38, 157, 204, 0.28);
+
+  border-radius: 50%;
+
+  color: #93aec3;
+
+  background:
+    rgba(7, 49, 78, 0.88);
+
+  font-size: 10px;
+  font-weight: 850;
+}
+
+/* =========================================================
+   RECOMENDAÇÃO
+========================================================= */
+
+.sports-recommendation {
+  width: min(
+    650px,
+    100%
+  );
+
+  min-height: 67px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+
+  margin-top: auto;
+
+  padding:
+    9px 14px;
+
+  border:
+    1px solid
+    rgba(24, 167, 217, 0.35);
+
+  border-radius: 11px;
+
+  background:
+    linear-gradient(
+      100deg,
+      rgba(6, 58, 93, 0.94),
+      rgba(5, 42, 69, 0.89)
+    );
+}
+
+.sports-recommendation-icon {
+  flex: 0 0 auto;
+
+  width: 43px;
+  height: 43px;
+
+  display: grid;
+
+  place-items: center;
+
+  border-radius: 9px;
+
+  color: #27dcff;
+
+  background:
+    rgba(7, 91, 136, 0.77);
+}
+
+.sports-recommendation-icon svg {
+  width: 23px;
+  height: 23px;
+}
+
+.sports-recommendation > div:last-child {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 3px;
+}
+
+.sports-recommendation span {
+  color: #86aac5;
+
+  font-size: 11px;
+}
+
+.sports-recommendation strong {
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+
+  white-space: nowrap;
+
+  color: #ffffff;
+
+  font-size: 18px;
+  line-height: 1.15;
+
+  font-weight: 850;
+
+  letter-spacing:
+    -0.025em;
+}
+
+/* =========================================================
+   AÇÕES: CONFIANÇA + BOTÃO
+========================================================= */
+
+.sports-match-actions {
+  position: relative;
+
+  z-index: 5;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 22px;
+
+  min-width: 0;
+
+  padding: 0;
+}
+
+/* =========================================================
+   CÍRCULO DE CONFIANÇA
+========================================================= */
+
+.sports-confidence-ring {
+  flex: 0 0 auto;
+
+  width: 94px;
+  height: 94px;
+
+  display: grid;
+
+  place-items: center;
+
+  padding: 7px;
+
+  border-radius: 50%;
+
+  box-shadow:
+    0 0 25px
+    rgba(0, 255, 210, 0.08);
+}
+
+.sports-confidence-ring-inner {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle at 50% 35%,
+      #0d3449,
+      #051a29 72%
+    );
+
+  box-shadow:
+    inset 0 0 0 1px
+    rgba(21, 105, 127, 0.34);
+}
+
+.sports-confidence-ring strong {
+  color: #ffffff;
+
+  font-size: 23px;
+  line-height: 1;
+
+  font-weight: 900;
+}
+
+.sports-confidence-ring span {
+  margin-top: 5px;
+
+  color: #9cb1c0;
+
+  font-size: 8px;
+}
+
+/* =========================================================
+   BOTÃO DETALHES
+========================================================= */
+
+.sports-details-button {
+  flex: 0 0 auto;
+
+  min-width: 150px;
+  min-height: 52px;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 11px;
+
+  padding:
+    0 16px;
+
+  border:
+    1px solid
+    rgba(0, 197, 246, 0.7);
+
+  border-radius: 10px;
+
+  cursor: pointer;
+
+  color: #32ddff;
+
+  background:
+    rgba(4, 44, 69, 0.78);
+
+  font-size: 12px;
+  font-weight: 850;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.sports-details-button:hover {
+  border-color:
+    #25ddff;
+
+  background:
+    rgba(7, 66, 97, 0.9);
+}
+
+.sports-details-button span {
+  color: #22e6f5;
+
+  font-size: 18px;
+  line-height: 1;
+}
+
+/* =========================================================
+   LOGO DA COMPETIÇÃO
+
+   Esta área fica isolada à direita.
+   Não fica por baixo do botão.
+========================================================= */
+
+.sports-league-watermark {
+  position: absolute;
+
+  z-index: 8;
+
+  top: 50%;
+  right: 25px;
+
+  width: 125px;
+
+  transform:
+    translateY(-50%);
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  pointer-events: none;
+
+  opacity: 0.9;
+}
+
+.sports-league-watermark img {
+  display: block;
+
+  width: auto;
+
+  max-width: 90px;
+  max-height: 82px;
+
+  object-fit: contain;
+
+  opacity: 0.86;
+
+  filter:
+    brightness(0)
+    invert(1)
+    drop-shadow(
+      0 0 8px
+      rgba(255, 255, 255, 0.12)
+    );
+}
+
+.sports-league-watermark span {
+  max-width: 120px;
+
+  margin-top: 5px;
+
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.7
+    );
+
+  text-align: center;
+
+  font-size: 10px;
+  line-height: 1.05;
+
+  font-weight: 900;
+
+  letter-spacing:
+    0.03em;
+
+  text-transform: uppercase;
+}
+
+/* =========================================================
+   DETALHES ABERTOS
+========================================================= */
+
+.sports-details-panel {
+  position: relative;
+
+  z-index: 5;
+
+  display: grid;
+
+  grid-template-columns:
+    145px
+    180px
+    minmax(220px, 1fr);
+
+  gap: 12px;
+
+  padding:
+    16px 24px
+    20px;
+
+  border-top:
+    1px solid
+    rgba(31, 154, 205, 0.16);
+
+  background:
+    rgba(2, 21, 36, 0.68);
+}
+
+.sports-detail-box,
+.sports-detail-alternatives {
+  min-height: 88px;
+
+  padding:
+    13px 14px;
+
+  border:
+    1px solid
+    rgba(36, 151, 199, 0.2);
+
+  border-radius: 10px;
+
+  background:
+    rgba(7, 45, 71, 0.6);
+}
+
+.sports-detail-box {
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+}
+
+.sports-detail-box > span,
+.sports-detail-alternatives > span {
+  color: #7696b2;
+
+  font-size: 10px;
+
+  font-weight: 750;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.07em;
+}
+
+.sports-detail-box strong {
+  margin-top: 4px;
+
+  color: #ffffff;
+
+  font-size: 20px;
+  font-weight: 850;
+}
+
+.sports-detail-box small {
+  margin-top: 3px;
+
+  color: #88a3b9;
+
+  font-size: 10px;
+}
+
+.sports-detail-alternatives {
+  display: grid;
+
+  gap: 6px;
+}
+
+.sports-detail-alternatives > div {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 12px;
+
+  color: #b9ccdb;
+
+  font-size: 11px;
+}
+
+.sports-detail-alternatives strong {
+  color: #25e3e8;
+
+  font-size: 11px;
+}
+
+.sports-detail-reason {
+  grid-column:
+    1 / -1;
+
+  padding:
+    13px 16px;
+
+  border-left:
+    3px solid
+    rgba(23, 213, 240, 0.62);
+
+  border-radius: 7px;
+
+  color: #96aec2;
+
+  background:
+    rgba(7, 43, 67, 0.5);
+
+  font-size: 11px;
+  line-height: 1.55;
+}
+
+/* =========================================================
+   LOADING
+========================================================= */
+
+.sports-loading-list {
+  display: grid;
+
+  gap: 16px;
+}
+
+.sports-skeleton {
+  min-height: 220px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 16px;
+
+  padding: 25px;
+
+  overflow: hidden;
+
+  border:
+    1px solid
+    rgba(33, 151, 201, 0.17);
+
+  border-radius: 15px;
+
+  background:
+    rgba(5, 31, 50, 0.78);
+}
+
+.sports-skeleton div {
+  height: 20px;
+
+  border-radius: 8px;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(35, 105, 137, 0.14),
+      rgba(64, 166, 205, 0.27),
+      rgba(35, 105, 137, 0.14)
+    );
+
+  background-size:
+    220% 100%;
+
+  animation:
+    sportsSkeleton
+    1.5s linear infinite;
+}
+
+.sports-skeleton div:nth-child(1) {
+  width: 35%;
+}
+
+.sports-skeleton div:nth-child(2) {
+  width: 65%;
+  height: 58px;
+}
+
+.sports-skeleton div:nth-child(3) {
+  width: 60%;
+  height: 58px;
+}
+
+/* =========================================================
+   ERRO / SEM JOGOS
+========================================================= */
+
+.sports-error {
+  min-height: 250px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 35px;
+
+  text-align: center;
+
+  border:
+    1px solid
+    rgba(32, 161, 213, 0.27);
+
+  border-radius: 15px;
+
+  background:
+    rgba(5, 32, 52, 0.82);
+}
+
+.sports-error > div {
+  width: 48px;
+  height: 48px;
+
+  display: grid;
+
+  place-items: center;
+
+  margin-bottom: 12px;
+
+  border-radius: 50%;
+
+  color: #1fdfff;
+
+  background:
+    rgba(12, 86, 120, 0.5);
+
+  font-size: 22px;
+  font-weight: 850;
+}
+
+.sports-error h3 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: 20px;
+}
+
+.sports-error p {
+  max-width: 520px;
+
+  margin:
+    8px 0
+    18px;
+
+  color: #8ba4ba;
+
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.sports-error button {
+  min-height: 42px;
+
+  padding:
+    0 18px;
+
+  border:
+    1px solid
+    rgba(0, 193, 246, 0.5);
+
+  border-radius: 9px;
+
+  cursor: pointer;
+
+  color: #2bdcff;
+
+  background:
+    rgba(5, 65, 94, 0.7);
+
+  font-weight: 750;
+}
+
+/* =========================================================
+   MOBILE HERO / STATS
+========================================================= */
+
+.sports-mobile-hero,
+.sports-mobile-stats {
+  display: none;
+}
+
+/* =========================================================
+   ANIMAÇÕES
+========================================================= */
+
+.spinning {
+  animation:
+    sportsSpin
+    0.8s linear infinite;
+}
+
+@keyframes sportsSpin {
+  to {
+    transform:
+      rotate(360deg);
+  }
+}
+
+@keyframes sportsSkeleton {
+  from {
+    background-position:
+      200% 0;
+  }
+
+  to {
+    background-position:
+      -20% 0;
+  }
+}
+
+/* =========================================================
+   DESKTOP MÉDIO
+========================================================= */
+
+@media (
+  min-width: 1101px
+) and (
+  max-width: 1450px
+) {
+
+  .sports-layout {
+    grid-template-columns:
+      275px
+      minmax(0, 1fr);
+
+    gap: 28px;
+  }
+
+  .sports-overview {
+    width: 275px;
+  }
+
+  .sports-match-main {
+    grid-template-columns:
+      minmax(0, 1fr)
+      265px;
+
+    gap: 18px;
+
+    padding-right:
+      160px;
+  }
+
+  .sports-match-actions {
+    gap: 15px;
+  }
+
+  .sports-confidence-ring {
+    width: 86px;
+    height: 86px;
+  }
+
+  .sports-details-button {
+    min-width: 135px;
+
+    padding:
+      0 12px;
+  }
+
+  .sports-league-watermark {
+    right: 18px;
+
+    width: 115px;
+  }
+
+  .sports-league-watermark img {
+    max-width: 80px;
+    max-height: 75px;
+  }
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (
+  min-width: 821px
+) and (
+  max-width: 1100px
+) {
+
+  .sports-layout {
+    width:
+      calc(100% - 30px);
+
+    margin:
+      0 15px;
+
+    grid-template-columns:
+      235px
+      minmax(0, 1fr);
+
+    gap: 20px;
+
+    padding-top: 25px;
+  }
+
+  .sports-overview {
+    width: 235px;
+
+    padding:
+      18px 13px;
+  }
+
+  .sports-overview h2 {
+    font-size: 23px;
+  }
+
+  .sports-overview-stat {
+    min-height: 82px;
+  }
+
+  .sports-match-main {
+    grid-template-columns:
+      minmax(0, 1fr);
+
+    gap: 12px;
+
+    padding:
+      18px 20px;
+  }
+
+  .sports-match-actions {
+    justify-content: flex-start;
+  }
+
+  .sports-league-watermark {
+    display: none;
+  }
+
+  .sports-details-panel {
+    grid-template-columns:
+      1fr
+      1fr;
+  }
+
+  .sports-detail-alternatives {
+    grid-column:
+      1 / -1;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (
+  max-width: 820px
+) {
+
+  .sports-page {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(2, 14, 25, 0.88),
+        #020b14
+      ),
+      url("/assets/neuro-win-sports-bg.png")
+        center top / cover no-repeat;
+  }
+
+  .sports-layout {
+    width: 100%;
+
+    margin: 0;
+
+    display: block;
+
+    padding:
+      0 0
+      105px;
+  }
+
+  .sports-overview {
+    display: none;
+  }
+
+  .sports-content {
+    padding: 0;
+  }
+
+  .sports-desktop-heading {
+    display: none;
+  }
+
+  /* HERO */
+
+  .sports-mobile-hero {
+    display: block;
+
+    padding:
+      30px 17px
+      22px;
+
+    background:
+      linear-gradient(
+        180deg,
+        rgba(3, 24, 40, 0.48),
+        rgba(3, 16, 28, 0.96)
+      );
+  }
+
+  .sports-mobile-kicker {
+    color: #20d9f8;
+
+    font-size: 10px;
+
+    font-weight: 850;
+
+    letter-spacing:
+      0.13em;
+  }
+
+  .sports-mobile-hero h1 {
+    margin:
+      7px 0 5px;
+
+    color: #ffffff;
+
+    font-size: 29px;
+    line-height: 1.08;
+
+    font-weight: 850;
+
+    letter-spacing:
+      -0.04em;
+  }
+
+  .sports-mobile-hero p {
+    margin: 0;
+
+    color: #8ea7bf;
+
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .sports-mobile-refresh {
+    width: 100%;
+
+    min-height: 47px;
+
+    margin-top: 18px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    border: 0;
+
+    border-radius: 10px;
+
+    color: #001922;
+
+    background:
+      linear-gradient(
+        135deg,
+        #39ddf3,
+        #22c3e7
+      );
+
+    font-size: 14px;
+    font-weight: 850;
+  }
+
+  .sports-mobile-refresh > span {
+    width: 17px;
+    height: 17px;
+
+    display: inline-flex;
+  }
+
+  .sports-mobile-refresh svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  /* STATS MOBILE */
+
+  .sports-mobile-stats {
+    display: grid;
+
+    grid-template-columns:
+      repeat(
+        3,
+        minmax(0, 1fr)
+      );
+
+    gap: 8px;
+
+    padding:
+      0 10px
+      14px;
+  }
+
+  .sports-mobile-stats > div {
+    min-height: 96px;
+
+    display: grid;
+
+    grid-template-columns:
+      35px
+      minmax(0, 1fr);
+
+    grid-template-rows:
+      auto
+      auto;
+
+    align-items: center;
+
+    column-gap: 8px;
+
+    padding: 10px;
+
+    border:
+      1px solid
+      rgba(38, 156, 205, 0.2);
+
+    border-radius: 11px;
+
+    background:
+      rgba(6, 38, 62, 0.84);
+  }
+
+  .sports-mobile-stat-icon {
+    grid-row:
+      1 / 3;
+
+    width: 35px;
+    height: 35px;
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 8px;
+
+    color: #22daf5;
+
+    background:
+      rgba(9, 81, 119, 0.68);
+  }
+
+  .sports-mobile-stat-icon svg {
+    width: 19px;
+    height: 19px;
+  }
+
+  .sports-mobile-stats small {
+    align-self: end;
+
+    color: #849eb6;
+
+    font-size: 9px;
+    line-height: 1.25;
+  }
+
+  .sports-mobile-stats strong {
+    align-self: start;
+
+    color: #ffffff;
+
+    font-size: 20px;
+    line-height: 1.05;
+  }
+
+  /* LISTA */
+
+  .sports-matches,
+  .sports-loading-list {
+    gap: 11px;
+
+    padding:
+      0 10px;
+  }
+
+  /* CARD */
+
+  .sports-match-card {
+    min-height: 0;
+
+    border-radius: 13px;
+  }
+
+  .sports-match-stadium {
+    opacity: 0.12;
+  }
+
+  .sports-league-watermark {
+    display: none;
+  }
+
+  .sports-match-main {
+    min-height: 0;
+
+    display: block;
+
+    padding:
+      14px 13px;
+  }
+
+  .sports-match-meta {
+    align-items: flex-start;
+
+    gap: 8px;
+
+    font-size: 9px;
+  }
+
+  .sports-match-meta-left {
+    gap: 6px;
+  }
+
+  .sports-country-flag {
+    font-size: 15px;
+  }
+
+  .sports-match-time {
+    font-size: 9px;
+  }
+
+  .sports-teams-row {
+    width: 100%;
+
+    grid-template-columns:
+      minmax(0, 1fr)
+      38px
+      minmax(0, 1fr);
+
+    gap: 8px;
+
+    margin:
+      13px 0
+      14px;
+
+    padding: 0;
+  }
+
+  .sports-team {
+    flex-direction: column;
+
+    gap: 6px;
+
+    text-align: center;
+  }
+
+  .sports-team-logo {
+    width: 51px;
+    height: 51px;
+  }
+
+  .sports-team strong {
+    max-width: 115px;
+
+    font-size: 12px;
+  }
+
+  .sports-vs {
+    width: 33px;
+    height: 33px;
+
+    font-size: 9px;
+  }
+
+  .sports-recommendation {
+    width: 100%;
+
+    min-height: 58px;
+
+    padding:
+      8px 10px;
+  }
+
+  .sports-recommendation-icon {
+    width: 37px;
+    height: 37px;
+  }
+
+  .sports-recommendation-icon svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .sports-recommendation span {
+    font-size: 9px;
+  }
+
+  .sports-recommendation strong {
+    font-size: 15px;
+  }
+
+  .sports-match-actions {
+    margin-top: 12px;
+
+    justify-content: space-between;
+
+    gap: 12px;
+  }
+
+  .sports-confidence-ring {
+    width: 72px;
+    height: 72px;
+
+    padding: 5px;
+  }
+
+  .sports-confidence-ring strong {
+    font-size: 18px;
+  }
+
+  .sports-confidence-ring span {
+    font-size: 7px;
+  }
+
+  .sports-details-button {
+    min-width: 126px;
+
+    min-height: 44px;
+
+    padding:
+      0 13px;
+
+    font-size: 10px;
+  }
+
+  /* DETALHES */
+
+  .sports-details-panel {
+    display: grid;
+
+    grid-template-columns:
+      1fr
+      1fr;
+
+    gap: 8px;
+
+    padding:
+      12px 13px
+      14px;
+  }
+
+  .sports-detail-box,
+  .sports-detail-alternatives {
+    min-height: 78px;
+  }
+
+  .sports-detail-alternatives {
+    grid-column:
+      1 / -1;
+  }
+
+  .sports-detail-reason {
+    grid-column:
+      1 / -1;
+
+    font-size: 10px;
+  }
+
+  .sports-error {
+    margin:
+      0 10px;
+  }
+}
+
+/* =========================================================
+   MOBILE PEQUENO
+========================================================= */
+
+@media (
+  max-width: 430px
+) {
+
+  .sports-mobile-hero {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .sports-mobile-stats {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  .sports-mobile-stats > div {
+    padding: 8px;
+  }
+
+  .sports-mobile-stat-icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .sports-mobile-stats small {
+    font-size: 8px;
+  }
+
+  .sports-matches,
+  .sports-loading-list {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  .sports-match-main {
+    padding-left: 11px;
+    padding-right: 11px;
+  }
+
+  .sports-team-logo {
+    width: 47px;
+    height: 47px;
+  }
+
+  .sports-team strong {
+    max-width: 94px;
+
+    font-size: 11px;
+  }
+
+  .sports-recommendation strong {
+    font-size: 14px;
+  }
+}
+/* =========================================================
+   CORREÇÃO FINAL — CONFIANÇA + BOTÃO + COMPETIÇÃO
+========================================================= */
+
+@media (min-width: 1101px) {
+
+  .sports-match-main {
+    grid-template-columns:
+      minmax(0, 1fr)
+      430px !important;
+
+    gap: 24px !important;
+
+    padding:
+      20px 24px
+      18px !important;
+  }
+
+  .sports-match-actions {
+    display: grid !important;
+
+    grid-template-columns:
+      96px
+      150px
+      130px !important;
+
+    align-items: center !important;
+    justify-content: end !important;
+
+    gap: 18px !important;
+
+    padding: 0 !important;
+  }
+
+  /* confiança */
+
+  .sports-confidence-ring {
+    width: 94px !important;
+    height: 94px !important;
+  }
+
+  /* botão */
+
+  .sports-details-button {
+    width: 150px !important;
+    min-width: 150px !important;
+    min-height: 52px !important;
+  }
+
+  /* logo da competição deixa de ser absoluto */
+
+  .sports-league-watermark {
+    position: static !important;
+
+    top: auto !important;
+    right: auto !important;
+
+    width: 130px !important;
+    height: 120px !important;
+
+    transform: none !important;
+
+    display: flex !important;
+
+    flex-direction: column !important;
+
+    align-items: center !important;
+    justify-content: center !important;
+
+    opacity: 1 !important;
+
+    pointer-events: none !important;
+  }
+
+  .sports-league-watermark img {
+    display: block !important;
+
+    width: auto !important;
+    height: auto !important;
+
+    max-width: 88px !important;
+    max-height: 80px !important;
+
+    object-fit: contain !important;
+
+    opacity: 0.82 !important;
+
+    filter:
+      brightness(0)
+      invert(1)
+      drop-shadow(
+        0 0 8px
+        rgba(255, 255, 255, 0.14)
+      ) !important;
+  }
+
+  .sports-league-watermark span {
+    width: 125px !important;
+
+    margin-top: 5px !important;
+
+    color:
+      rgba(
+        255,
+        255,
+        255,
+        0.68
+      ) !important;
+
+    text-align: center !important;
+
+    font-size: 10px !important;
+    line-height: 1.1 !important;
+
+    font-weight: 900 !important;
+
+    text-transform: uppercase !important;
+  }
+}
+.sports-bet-card {
+  width: 100%;
+  margin-top: 14px;
+  padding: 22px 24px 24px;
+  border: 1px solid rgba(91, 130, 182, 0.26);
+  border-radius: 28px;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(19, 35, 63, 0.98) 0%,
+      rgba(12, 27, 49, 0.98) 100%
+    );
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.015),
+    0 18px 50px rgba(0, 0, 0, 0.22);
+}
+
+.sports-bet-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.sports-bet-market {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 9px 18px;
+  border: 1px solid rgba(125, 176, 240, 0.35);
+  border-radius: 999px;
+
+  background: rgba(62, 112, 173, 0.28);
+
+  color: #9fc4f4;
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.sports-bet-fire {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+
+  font-size: 26px;
+  line-height: 1;
+}
+
+.sports-bet-fire span {
+  opacity: 0.18;
+  filter: grayscale(1);
+}
+
+.sports-bet-card-main {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 28px;
+  align-items: start;
+
+  margin-top: 28px;
+}
+
+.sports-bet-pick {
+  color: #ffffff;
+  font-size: clamp(30px, 3vw, 52px);
+  line-height: 1.05;
+  font-weight: 900;
+  letter-spacing: -0.035em;
+}
+
+.sports-bet-numbers {
+  min-width: 190px;
+  text-align: right;
+}
+
+.sports-bet-numbers > div {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.sports-bet-numbers small {
+  margin-bottom: 7px;
+
+  color: #7fa6d7;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.sports-bet-numbers strong {
+  color: #8ebdff;
+  font-size: clamp(48px, 4.6vw, 72px);
+  line-height: 0.9;
+  font-weight: 900;
+  letter-spacing: -0.05em;
+}
+
+.sports-bet-numbers > span {
+  display: block;
+  margin-top: 10px;
+
+  color: rgba(255, 255, 255, 0.28);
+  font-size: 17px;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.sports-bet-history {
+  margin-top: 30px;
+
+  color: #8294af;
+  font-size: 17px;
+  line-height: 1.55;
+  font-weight: 600;
+}
+
+@media (max-width: 760px) {
+  .sports-bet-card {
+    padding: 18px;
+    border-radius: 22px;
+  }
+
+  .sports-bet-card-top {
+    align-items: flex-start;
+  }
+
+  .sports-bet-fire {
+    font-size: 20px;
+  }
+
+  .sports-bet-card-main {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .sports-bet-numbers {
+    min-width: 0;
+    text-align: left;
+  }
+
+  .sports-bet-numbers > div {
+    justify-content: flex-start;
+  }
+
+  .sports-bet-history {
+    margin-top: 22px;
+    font-size: 15px;
+  }
+}
